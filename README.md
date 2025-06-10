@@ -37,7 +37,8 @@ Or install directly from the [Chrome Web Store](https://chromewebstore.google.co
 
 ## 🖼️ Screenshots
 
-[![PDF Merge, Split, Fill and Sign](images/pdf-merge-split-fill-sign.png)](https://chromewebstore.google.com/detail/pdf-merge-and-split-tool/jaeaclinfbdclcfapopmeimibdfallck)
+![Main UI](screenshots/main-ui.png)
+*Main interface: Merge, Split, Fill & Sign PDFs locally in your browser.*
 
 ---
 
