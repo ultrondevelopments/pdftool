@@ -1,6 +1,6 @@
-# PDF Merger Chrome Extension - Updated Setup Guide
+# PDF Merger Chrome Extension - Setup Guide
 
-## 🎉 What's New: Zero Permissions!
+## 🎉 Features: Zero Permissions!
 
 ✅ **Removed storage permission** - Not needed  
 ✅ **No scary permission warnings** - Users will trust it more  
@@ -61,4 +61,4 @@ This extension is now ideal for:
 - **Privacy-conscious users** - No data concerns
 - **Educational use** - Safe for schools
 
-Your extension is now **permission-free** and ready for wide distribution! 🚀
+Your extension is now **permission-free** and ready for distribution! 🚀

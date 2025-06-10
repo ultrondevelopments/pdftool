@@ -25,7 +25,7 @@
    - Click "Open PDF Merger"
    - Try uploading and merging some PDF files
 
-## What's Fixed
+## Features
 
 ✅ **Removed External Dependencies:** No more Tailwind CSS or Lucide icons from CDN  
 ✅ **Inline CSS:** All styling is now embedded in the HTML  

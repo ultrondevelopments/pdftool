@@ -51,7 +51,7 @@ Or install directly from the [Chrome Web Store](https://chromewebstore.google.co
 
 ## 🏢 About Ultron Developments Pty. Ltd.
 
-[Ultron Developments](https://ultrondevelopments.com.au/) is a Perth-based software company specializing in privacy-first, offline-first, and AI-powered solutions for business and productivity. We build with ❤️ and ☕.
+[Ultron Developments](https://ultrondevelopments.com.au/) is a Perth-based software company specializing in privacy-first, offline-first solutions for business and productivity. We build with ❤️ and ☕.
 
 ---
 

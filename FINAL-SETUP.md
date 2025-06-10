@@ -1,6 +1,6 @@
-# PDF Merger Chrome Extension - Final Setup
+# PDF Merger Chrome Extension - Setup
 
-## 🎯 What's Fixed
+## 🎯 Features
 
 ✅ **No More CSP Errors** - All JavaScript moved to external files  
 ✅ **No Inline Scripts** - Completely compliant with Chrome extension security  
@@ -82,4 +82,4 @@ Your extension should now:
 - Merge PDFs successfully
 - Work completely offline
 
-**Just download the PDF-lib file and you're ready to go!** 🚀
+**Download the PDF-lib file and you're all set!** 🚀

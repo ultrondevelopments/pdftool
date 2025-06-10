@@ -1,6 +1,6 @@
-# PDF Merger Chrome Extension - Complete Setup Guide
+# PDF Merger Chrome Extension - Setup Guide
 
-## 🎯 What's Fixed in This Version
+## 🎯 Features
 
 ✅ **Zero Inline Scripts** - All JavaScript moved to external files  
 ✅ **Event Delegation** - Proper handling of dynamic content  
@@ -120,4 +120,4 @@ When working correctly, you should see:
 4. **Restart Chrome** - Sometimes helps with extension issues
 5. **Check Chrome version** - Make sure you're on a recent version
 
-Your extension is now 100% CSP compliant and ready to use! 🎉
+Your extension is now fully functional! 🎉
