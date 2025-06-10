@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDF Merge, Split, Sign and Fill Tool - Privacy Focused</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>PDF Merge, Split, Sign and Fill Tool</h1>
+            <p>Process PDF files locally in your browser. Your files never leave your device.</p>
+        </div>
+
+        <!-- Mode Tabs -->
+        <div class="tabs">
+            <button id="mergeTab" class="tab-btn active">Merge PDFs</button>
+            <button id="splitTab" class="tab-btn">Split PDF</button>
+            <button id="fillSignTab" class="tab-btn">Fill & Sign</button>
+        </div>
+
+        <!-- Merge Mode -->
+        <div id="mergeMode" class="mode-container">
+            <!-- Upload Section -->
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title">
+                        <span class="icon icon-upload"></span>
+                        Upload PDF Files
+                    </div>
+                    <div class="card-description">
+                        Select multiple PDF files to merge. Files are processed locally for privacy.
+                    </div>
+                </div>
+                <div class="card-content">
+                    <div id="uploadZone" class="upload-zone">
+                        <div class="upload-icon">📤</div>
+                        <div class="upload-title">Drop PDF files here or click to browse</div>
+                        <div class="upload-subtitle">Supports multiple PDF files</div>
+                    </div>
+                    <input type="file" id="fileInput" accept=".pdf" multiple class="hidden">
+                </div>
+            </div>
+
+            <!-- File List Section -->
+            <div id="fileListCard" class="card file-list">
+                <div class="card-header">
+                    <div class="card-title">
+                        <span class="icon icon-file"></span>
+                        PDF Files (<span id="fileCount">0</span>)
+                    </div>
+                    <div class="card-description">
+                        Drag and drop to reorder files. The order determines the merge sequence.
+                    </div>
+                </div>
+                <div class="card-content">
+                    <div id="fileList"></div>
+                </div>
+            </div>
+
+            <!-- Merge Section -->
+            <div id="mergeCard" class="card merge-container">
+                <div class="card-header">
+                    <div class="card-title">
+                        <span class="icon icon-merge"></span>
+                        Merge PDFs
+                    </div>
+                    <div class="card-description">Combine all uploaded PDFs into a single document.</div>
+                </div>
+                <div class="card-content">
+                    <button id="mergeBtn" class="action-btn">
+                        <span class="icon icon-download"></span>
+                        <span id="mergeText">Merge & Save PDF to Device</span>
+                    </button>
+                    <div class="action-note">
+                        The merged PDF will be saved directly to your device
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Split Mode -->
+        <div id="splitMode" class="mode-container hidden">
+            <!-- Upload Section -->
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title">
+                        <span class="icon icon-upload"></span>
+                        Upload PDF to Split
+                    </div>
+                    <div class="card-description">
+                        Select a PDF file to split into separate pages or page ranges.
+                    </div>
+                </div>
+                <div class="card-content">
+                    <div id="splitUploadZone" class="upload-zone">
+                        <div class="upload-icon">📤</div>
+                        <div class="upload-title">Drop a PDF file here or click to browse</div>
+                        <div class="upload-subtitle">Select a single PDF file</div>
+                    </div>
+                    <input type="file" id="splitFileInput" accept=".pdf" class="hidden">
+                </div>
+            </div>
+
+            <!-- PDF Preview Section -->
+            <div id="pdfPreviewCard" class="card pdf-preview-card hidden">
+                <div class="card-header">
+                    <div class="card-title">
+                        <span class="icon icon-file"></span>
+                        <span id="pdfFileName">document.pdf</span> (<span id="pdfPageCount">0</span> pages)
+                    </div>
+                    <div class="card-description">
+                        Select how you want to split the PDF
+                    </div>
+                </div>
+                <div class="card-content">
+                    <div class="split-options">
+                        <div class="split-option">
+                            <input type="radio" id="splitAll" name="splitOption" value="all" checked>
+                            <label for="splitAll">Split into individual pages</label>
+                            <p class="option-description">Each page becomes a separate PDF file</p>
+                        </div>
+                        <div class="split-option">
+                            <input type="radio" id="splitRange" name="splitOption" value="range">
+                            <label for="splitRange">Split by page range</label>
+                            <div id="rangeInputContainer" class="range-input-container">
+                                <input type="text" id="pageRanges" placeholder="e.g., 1-3, 5, 7-9" class="range-input">
+                                <p class="option-description">Enter page ranges separated by commas (e.g., 1-3, 5, 7-9)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Split Action Section -->
+            <div id="splitActionCard" class="card hidden">
+                <div class="card-header">
+                    <div class="card-title">
+                        <span class="icon icon-scissors"></span>
+                        Split PDF
+                    </div>
+                    <div class="card-description">Split your PDF based on the selected options.</div>
+                </div>
+                <div class="card-content">
+                    <button id="splitBtn" class="action-btn">
+                        <span class="icon icon-download"></span>
+                        <span id="splitText">Split & Save PDFs to Device</span>
+                    </button>
+                    <div class="action-note">
+                        The split PDFs will be saved as a ZIP file to your device
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Fill & Sign Mode -->
+        <div id="fillSignMode" class="mode-container hidden">
+            <!-- Upload Section -->
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title">
+                        <span class="icon icon-upload"></span>
+                        Upload PDF to Fill & Sign
+                    </div>
+                    <div class="card-description">
+                        Select a PDF file to fill out forms and add signatures.
+                    </div>
+                </div>
+                <div class="card-content">
+                    <div id="fillSignUploadZone" class="upload-zone">
+                        <div class="upload-icon">📝</div>
+                        <div class="upload-title">Drop a PDF file here or click to browse</div>
+                        <div class="upload-subtitle">Select a single PDF file</div>
+                    </div>
+                    <input type="file" id="fillSignFileInput" accept=".pdf" class="hidden">
+                </div>
+            </div>
+
+            <!-- PDF Editor Section -->
+            <div id="pdfEditorCard" class="card pdf-editor-card hidden">
+                <div class="card-header">
+                    <div class="card-title">
+                        <span class="icon icon-edit"></span>
+                        <span id="fillSignFileName">document.pdf</span>
+                    </div>
+                    <div class="card-description">
+                        Fill out forms, add text, and sign your PDF
+                    </div>
+                </div>
+                <div class="card-content">
+                    <div class="editor-toolbar">
+                        <div class="toolbar-section">
+                            <button id="textToolBtn" class="tool-btn" title="Add Text">
+                                <span class="icon icon-text">T</span>
+                            </button>
+                            <button id="signToolBtn" class="tool-btn" title="Add Signature">
+                                <span class="icon icon-signature">✍️</span>
+                            </button>
+                            <button id="dateToolBtn" class="tool-btn" title="Add Date">
+                                <span class="icon icon-date">📅</span>
+                            </button>
+                            <button id="eraserToolBtn" class="tool-btn" title="Eraser">
+                                <span class="icon icon-eraser">🧽</span>
+                            </button>
+                        </div>
+                        <div class="toolbar-section">
+                            <button id="undoBtn" class="tool-btn" title="Undo Last Action">
+                                <span class="icon icon-undo">↶</span>
+                            </button>
+                            <button id="prevPageBtn" class="nav-btn" title="Previous Page">
+                                <span class="icon icon-prev">◀</span>
+                            </button>
+                            <span id="pageIndicator">Page <span id="currentPage">1</span> of <span id="totalPages">1</span></span>
+                            <button id="nextPageBtn" class="nav-btn" title="Next Page">
+                                <span class="icon icon-next">▶</span>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div id="pdfContainer" class="pdf-container">
+                        <canvas id="pdfCanvas" class="pdf-canvas"></canvas>
+                        <div id="editorLayer" class="editor-layer"></div>
+                    </div>
+                    
+                    <!-- Text Properties Panel (initially hidden) -->
+                    <div id="textPropertiesPanel" class="properties-panel hidden">
+                        <div class="panel-header">Text Properties</div>
+                        <div class="panel-content">
+                            <div class="property-row">
+                                <label for="fontSize">Size:</label>
+                                <select id="fontSize" class="property-input">
+                                    <option value="10">10</option>
+                                    <option value="12" selected>12</option>
+                                    <option value="14">14</option>
+                                    <option value="16">16</option>
+                                    <option value="18">18</option>
+                                    <option value="20">20</option>
+                                    <option value="24">24</option>
+                                </select>
+                            </div>
+                            <div class="property-row">
+                                <label for="fontColor">Color:</label>
+                                <input type="color" id="fontColor" value="#000000" class="property-input">
+                            </div>
+                            <div class="property-row">
+                                <button id="applyTextBtn" class="property-btn">Apply</button>
+                                <button id="cancelTextBtn" class="property-btn">Cancel</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Signature Panel (initially hidden) -->
+                    <div id="signaturePanel" class="signature-panel hidden">
+                        <div class="panel-header">Create Signature</div>
+                        <div class="panel-content">
+                            <div class="signature-tabs">
+                                <button id="drawTabBtn" class="sig-tab-btn active">Draw</button>
+                                <button id="typeTabBtn" class="sig-tab-btn">Type</button>
+                            </div>
+                            <div id="drawSignatureTab" class="signature-tab-content">
+                                <canvas id="signatureCanvas" class="signature-canvas"></canvas>
+                                <div class="signature-actions">
+                                    <button id="clearSignatureBtn" class="signature-btn">Clear</button>
+                                </div>
+                            </div>
+                            <div id="typeSignatureTab" class="signature-tab-content hidden">
+                                <input type="text" id="signatureText" class="signature-text-input" placeholder="Type your name">
+                                <div class="signature-font-selector">
+                                    <label for="signatureFont">Style:</label>
+                                    <select id="signatureFont" class="signature-font-select">
+                                        <option value="'Dancing Script', cursive">Signature</option>
+                                        <option value="'Homemade Apple', cursive">Handwritten</option>
+                                        <option value="'Satisfy', cursive">Flowing</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="signature-actions">
+                                <button id="saveSignatureBtn" class="signature-btn primary">Add to PDF</button>
+                                <button id="cancelSignatureBtn" class="signature-btn">Cancel</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Save Action Section -->
+            <div id="fillSignSaveCard" class="card hidden">
+                <div class="card-header">
+                    <div class="card-title">
+                        <span class="icon icon-save"></span>
+                        Save Filled PDF
+                    </div>
+                    <div class="card-description">Save your filled and signed PDF to your device.</div>
+                </div>
+                <div class="card-content">
+                    <button id="saveFillSignBtn" class="action-btn">
+                        <span class="icon icon-download"></span>
+                        <span id="saveFillSignText">Save Completed PDF to Device</span>
+                    </button>
+                    <div class="action-note">
+                        The completed PDF will be saved directly to your device
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Info Section -->
+        <div class="card info-card">
+            <div class="card-content">
+                <div class="info-content">
+                    <div class="info-icon">
+                        <span class="icon icon-info"></span>
+                    </div>
+                    <div class="info-text">
+                        <h3>Privacy First</h3>
+                        <p>All PDF processing happens locally in your browser. Your files are never uploaded to any server, ensuring complete privacy and security.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="branding-footer">
+      Built with ❤️ by <a href="https://ultrondevelopments.com.au/" target="_blank" rel="noopener" class="branding-link">Ultron Developments</a>
+    </footer>
+
+    <script src="pdf.js"></script>
+    <script src="pdf.worker.js"></script>
+    <script src="pdf-lib.min.js"></script>
+    <script src="test-pdf-lib.js"></script>
+    <script src="jszip.min.js"></script>
+    <script src="app.js"></script>
+    <script src="fill-sign.js"></script>
+</body>
+</html>

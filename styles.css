@@ -1,0 +1,804 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  background: linear-gradient(135deg, #f0f9ff 0%, #e0e7ff 100%);
+  min-height: 100vh;
+  padding: 20px;
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.header h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #1f2937;
+  margin-bottom: 8px;
+}
+
+.header p {
+  color: #6b7280;
+  font-size: 1.1rem;
+}
+
+.tabs {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 24px;
+  gap: 8px;
+}
+
+.tab-btn {
+  padding: 12px 24px;
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #4b5563;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.tab-btn:hover {
+  background: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.tab-btn.active {
+  background: white;
+  color: #2563eb;
+  border-color: #bfdbfe;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.mode-container {
+  display: block;
+}
+
+.mode-container.hidden {
+  display: none;
+}
+
+.card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  margin-bottom: 24px;
+  overflow: hidden;
+}
+
+.card-header {
+  padding: 24px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.card-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #1f2937;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 4px;
+}
+
+.card-description {
+  color: #6b7280;
+  font-size: 0.875rem;
+}
+
+.card-content {
+  padding: 24px;
+}
+
+.upload-zone {
+  border: 2px dashed #d1d5db;
+  border-radius: 8px;
+  padding: 48px 24px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.upload-zone:hover {
+  border-color: #3b82f6;
+  background-color: #f0f9ff;
+}
+
+.upload-zone.dragover {
+  border-color: #3b82f6;
+  background-color: #f0f9ff;
+}
+
+.upload-icon {
+  width: 48px;
+  height: 48px;
+  margin: 0 auto 16px;
+  color: #9ca3af;
+}
+
+.upload-title {
+  font-size: 1.125rem;
+  font-weight: 500;
+  color: #374151;
+  margin-bottom: 8px;
+}
+
+.upload-subtitle {
+  color: #6b7280;
+  font-size: 0.875rem;
+}
+
+.file-list {
+  display: none;
+}
+
+.file-list.show {
+  display: block;
+}
+
+.file-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px;
+  background: #f9fafb;
+  border-radius: 8px;
+  margin-bottom: 8px;
+  cursor: move;
+  transition: all 0.2s ease;
+  border: 1px solid #e5e7eb;
+}
+
+.file-item:hover {
+  background: #f3f4f6;
+  border-color: #d1d5db;
+}
+
+.file-item.dragging {
+  opacity: 0.5;
+  transform: rotate(2deg);
+}
+
+.grip-icon {
+  width: 16px;
+  height: 16px;
+  color: #9ca3af;
+}
+
+.file-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.file-name {
+  font-weight: 500;
+  color: #1f2937;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.file-size {
+  color: #6b7280;
+  font-size: 0.875rem;
+}
+
+.file-number {
+  background: #e5e7eb;
+  color: #374151;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.remove-btn {
+  background: none;
+  border: none;
+  color: #ef4444;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+}
+
+.remove-btn:hover {
+  background: #fee2e2;
+}
+
+.merge-container {
+  display: none;
+}
+
+.merge-container.show {
+  display: block;
+}
+
+.action-btn {
+  width: 100%;
+  background: #3b82f6;
+  color: white;
+  border: none;
+  padding: 16px 24px;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.action-btn:hover {
+  background: #2563eb;
+}
+
+.action-btn:disabled {
+  background: #9ca3af;
+  cursor: not-allowed;
+}
+
+.action-note {
+  text-align: center;
+  color: #6b7280;
+  font-size: 0.75rem;
+  margin-top: 8px;
+}
+
+.info-card {
+  background: #f0f9ff;
+  border: 1px solid #bae6fd;
+}
+
+.info-content {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.info-icon {
+  background: #dbeafe;
+  border-radius: 50%;
+  padding: 8px;
+  flex-shrink: 0;
+}
+
+.info-text h3 {
+  font-weight: 500;
+  color: #1e40af;
+  margin-bottom: 4px;
+}
+
+.info-text p {
+  color: #1e40af;
+  font-size: 0.875rem;
+}
+
+.spinner {
+  width: 16px;
+  height: 16px;
+  border: 2px solid transparent;
+  border-top: 2px solid currentColor;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.hidden {
+  display: none;
+}
+
+/* Split PDF specific styles */
+.pdf-preview-card {
+  display: none;
+}
+
+.pdf-preview-card.show {
+  display: block;
+}
+
+.split-options {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.split-option {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.split-option label {
+  font-weight: 500;
+  color: #374151;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.option-description {
+  color: #6b7280;
+  font-size: 0.875rem;
+  margin-left: 24px;
+}
+
+.range-input-container {
+  margin-top: 8px;
+  margin-left: 24px;
+}
+
+.range-input {
+  width: 100%;
+  padding: 8px 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  margin-bottom: 4px;
+}
+
+.range-input:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2);
+}
+
+/* Icons using CSS */
+.icon {
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.icon-upload::before {
+  content: "📤";
+  font-size: 20px;
+}
+
+.icon-file::before {
+  content: "📄";
+  font-size: 20px;
+}
+
+.icon-merge::before {
+  content: "🔗";
+  font-size: 20px;
+}
+
+.icon-scissors::before {
+  content: "✂️";
+  font-size: 20px;
+}
+
+.icon-download::before {
+  content: "⬇️";
+  font-size: 16px;
+}
+
+.icon-grip::before {
+  content: "⋮⋮";
+  font-size: 12px;
+  color: #9ca3af;
+}
+
+.icon-x::before {
+  content: "✕";
+  font-size: 14px;
+}
+
+.icon-info::before {
+  content: "ℹ️";
+  font-size: 16px;
+}
+
+.error-banner {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #fee2e2;
+  border: 1px solid #fecaca;
+  color: #dc2626;
+  padding: 16px;
+  border-radius: 8px;
+  max-width: 500px;
+  z-index: 1000;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.error-banner a {
+  color: #dc2626;
+  text-decoration: underline;
+}
+
+.success-banner {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #d1fae5;
+  border: 1px solid #a7f3d0;
+  color: #065f46;
+  padding: 16px;
+  border-radius: 8px;
+  max-width: 500px;
+  z-index: 1000;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Fill & Sign specific styles */
+.pdf-editor-card {
+  display: none;
+}
+
+.pdf-editor-card.show {
+  display: block;
+}
+
+.editor-toolbar {
+  display: flex;
+  justify-content: space-between;
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 8px 12px;
+  margin-bottom: 16px;
+}
+
+.toolbar-section {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.tool-btn {
+  background: white;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.tool-btn:hover {
+  background: #f3f4f6;
+  border-color: #9ca3af;
+}
+
+.tool-btn.active {
+  background: #dbeafe;
+  border-color: #3b82f6;
+  color: #1e40af;
+}
+
+.nav-btn {
+  background: white;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.nav-btn:hover {
+  background: #f3f4f6;
+}
+
+.nav-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+#pageIndicator {
+  font-size: 0.875rem;
+  color: #4b5563;
+  padding: 0 8px;
+}
+
+.pdf-container {
+  position: relative;
+  width: 100%;
+  height: 800px;
+  max-height: 70vh;
+  overflow: auto;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  background: #f3f4f6;
+  margin-bottom: 16px;
+}
+
+.pdf-canvas {
+  display: block;
+  margin: 0 auto;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.editor-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.editor-element {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px dashed #3b82f6;
+  padding: 4px;
+  cursor: move;
+  pointer-events: auto;
+}
+
+.editor-element.selected {
+  border: 2px solid #3b82f6;
+}
+
+.editor-element.text-element {
+  min-width: 100px;
+  min-height: 24px;
+}
+
+.editor-element.signature-element {
+  border: none;
+  background: transparent;
+}
+
+.editor-element.date-element {
+  min-width: 100px;
+  min-height: 24px;
+}
+
+.properties-panel {
+  background: white;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 16px;
+}
+
+.properties-panel.hidden {
+  display: none;
+}
+
+.panel-header {
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 12px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.panel-content {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.property-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.property-input {
+  flex: 1;
+  padding: 6px 8px;
+  border: 1px solid #d1d5db;
+  border-radius: 4px;
+}
+
+.property-btn {
+  padding: 6px 12px;
+  background: #f3f4f6;
+  border: 1px solid #d1d5db;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.property-btn:hover {
+  background: #e5e7eb;
+}
+
+.signature-panel {
+  background: white;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 16px;
+}
+
+.signature-panel.hidden {
+  display: none;
+}
+
+.signature-tabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.sig-tab-btn {
+  padding: 8px 16px;
+  background: #f3f4f6;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.sig-tab-btn.active {
+  background: #dbeafe;
+  border-color: #3b82f6;
+  color: #1e40af;
+}
+
+.signature-tab-content {
+  margin-bottom: 16px;
+}
+
+.signature-tab-content.hidden {
+  display: none;
+}
+
+.signature-canvas {
+  width: 100%;
+  height: 150px;
+  border: 1px solid #d1d5db;
+  border-radius: 4px;
+  background: #f9fafb;
+  margin-bottom: 8px;
+}
+
+.signature-text-input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #d1d5db;
+  border-radius: 4px;
+  font-size: 1rem;
+  margin-bottom: 8px;
+}
+
+.signature-font-selector {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.signature-font-select {
+  flex: 1;
+  padding: 6px 8px;
+  border: 1px solid #d1d5db;
+  border-radius: 4px;
+}
+
+.signature-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+.signature-btn {
+  padding: 8px 16px;
+  background: #f3f4f6;
+  border: 1px solid #d1d5db;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.signature-btn:hover {
+  background: #e5e7eb;
+}
+
+.signature-btn.primary {
+  background: #3b82f6;
+  border-color: #2563eb;
+  color: white;
+}
+
+.signature-btn.primary:hover {
+  background: #2563eb;
+}
+
+/* Additional icons */
+.icon-text {
+  font-family: serif;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.icon-eraser {
+  font-size: 16px;
+}
+
+.icon-undo {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.icon-edit::before {
+  content: "✏️";
+  font-size: 20px;
+}
+
+.icon-save::before {
+  content: "💾";
+  font-size: 20px;
+}
+
+/* Add Google Fonts for signature styles */
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script&family=Homemade+Apple&family=Satisfy&display=swap");
+
+@font-face {
+  font-family: 'Dancing Script';
+  src: url('fonts/DancingScript-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Homemade Apple';
+  src: url('fonts/HomemadeApple-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Satisfy';
+  src: url('fonts/Satisfy-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+}
+
+.branding-footer {
+  text-align: center;
+  color: #888;
+  font-size: 0.95rem;
+  margin: 32px 0 12px 0;
+  letter-spacing: 0.01em;
+  opacity: 0.85;
+  user-select: none;
+}
+
+.branding-link {
+  color: #888;
+  text-decoration: underline dotted;
+  transition: color 0.2s;
+}
+.branding-link:hover {
+  color: #3b82f6;
+  text-decoration: underline;
+}

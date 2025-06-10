@@ -1,0 +1,31 @@
+{
+  "manifest_version": 3,
+  "name": "PDF Merge, Split, Sign and Fill Tool - Privacy Focused",
+  "version": "1.5.0",
+  "description": "Merge, split, sign and fill PDF files locally in your browser with complete privacy",
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "PDF Merge, Split, Sign and Fill Tool",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "32": "icons/icon32.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "32": "icons/icon32.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": ["index.html"],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDF-lib Test</title>
+</head>
+<body>
+    <h1>PDF-lib Loading Test</h1>
+    <div id="status">Testing PDF-lib loading...</div>
+    
+    <script src="pdf-lib.min.js"></script>
+    <script>
+        console.log('=== PDF-LIB TEST ===');
+        console.log('PDFLib type:', typeof PDFLib);
+        
+        if (typeof PDFLib !== 'undefined') {
+            console.log('PDFLib object:', PDFLib);
+            console.log('PDFDocument available:', !!PDFLib.PDFDocument);
+            
+            if (PDFLib.PDFDocument) {
+                console.log('PDFDocument.create available:', !!PDFLib.PDFDocument.create);
+                console.log('PDFDocument methods:', Object.getOwnPropertyNames(PDFLib.PDFDocument));
+                
+                try {
+                    const pdfDoc = PDFLib.PDFDocument.create();
+                    console.log('Document created successfully:', pdfDoc);
+                    document.getElementById('status').innerHTML = '✅ PDF-lib loaded successfully!';
+                } catch (error) {
+                    console.error('Error creating document:', error);
+                    document.getElementById('status').innerHTML = '❌ Error creating document: ' + error.message;
+                }
+            } else {
+                document.getElementById('status').innerHTML = '❌ PDFDocument not available';
+            }
+        } else {
+            console.error('PDFLib is not available');
+            document.getElementById('status').innerHTML = '❌ PDFLib is not available';
+        }
+    </script>
+</body>
+</html> 
