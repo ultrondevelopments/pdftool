@@ -21,12 +21,23 @@ A modern, privacy-first Chrome extension for working with PDF files **entirely o
 ## 🚀 Getting Started
 
 ### 1. **Install**
-- Download or clone this repository.
-- Go to `chrome://extensions` in your browser.
-- Enable **Developer mode** (top right).
-- Click **Load unpacked** and select the project folder.
 
-Or install directly from the [Chrome Web Store](https://chromewebstore.google.com/detail/pdf-merge-and-split-tool/jaeaclinfbdclcfapopmeimibdfallck).
+**Option A: Download from Releases (Recommended)**
+- Go to the [Releases](https://github.com/ultrondevelopments/pdftool/releases) page
+- Download the latest release ZIP file
+- Extract the ZIP file to a folder on your computer
+- Go to `chrome://extensions` in your browser
+- Enable **Developer mode** (top right)
+- Click **Load unpacked** and select the extracted folder
+
+**Option B: Clone Repository**
+- Download or clone this repository
+- Go to `chrome://extensions` in your browser
+- Enable **Developer mode** (top right)
+- Click **Load unpacked** and select the project folder
+
+**Option C: Chrome Web Store**
+- Install directly from the [Chrome Web Store](https://chromewebstore.google.com/detail/pdf-merge-and-split-tool/jaeaclinfbdclcfapopmeimibdfallck)
 
 ### 2. **Usage**
 - Click the extension icon in your browser.
