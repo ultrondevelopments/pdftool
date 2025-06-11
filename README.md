@@ -37,7 +37,7 @@ Or install directly from the [Chrome Web Store](https://chromewebstore.google.co
 
 ## 🖼️ Screenshots
 
-![Main UI](Screenshot.jpeg)
+![Main UI](screenshots/Screenshot.jpeg)
 *Main interface: Merge, Split, Fill & Sign PDFs locally in your browser.*
 
 ---
