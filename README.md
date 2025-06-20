@@ -5,7 +5,7 @@ Your ultimate Chrome extension for effortless PDF management.
 ### Merge, Split, Sign, Fill, Simplify Your PDFs!
 Easily combine multiple PDF documents, precisely split large PDFs, or seamlessly sign and fill forms. All directly from your browser!
 
-**Add to Chrome - It's Free!**
+[**Add to Chrome - It's Free!**](https://chromewebstore.google.com/detail/pdf-merge-split-sign-and/jaeaclinfbdclcfapopmeimibdfallck?authuser=0&hl=en)
 
 ---
 
@@ -45,7 +45,7 @@ Easily combine multiple PDF documents, precisely split large PDFs, or seamlessly
 
 ---
 
-[☕ Buy Me a Coffee]() <!-- Add your Buy Me a Coffee link here -->
+[☕ **Buy Me a Coffee**](https://buymeacoffee.com/puskark)
 
 ---
 © 2025 PDF Merge, Split, Sign and Fill Tool. All rights reserved.
