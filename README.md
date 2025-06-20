@@ -1,44 +1,53 @@
-# PDF Merge, Split, Sign and Fill Tool (Chrome Extension)
+# PDF Merge, Split, Sign and Fill Tool
 
-A privacy-focused Chrome extension for working with PDF files and images, featuring a modern, intuitive UI. All processing happens locally in your browser—your files never leave your device.
+Your ultimate Chrome extension for effortless PDF management.
 
-## Features
+### Merge, Split, Sign, Fill, Simplify Your PDFs!
+Easily combine multiple PDF documents, precisely split large PDFs, or seamlessly sign and fill forms. All directly from your browser!
 
-- **Merge PDFs**: Combine multiple PDF files into one. Drag and drop to reorder before merging.
-- **Split PDF**: Split a PDF into individual pages or custom page ranges. Download as separate files or a ZIP archive.
-- **Fill & Sign**: Add text, dates, signatures, and colored strikethroughs to your PDFs. Includes undo/redo, drag-and-drop, and color picker for strikethroughs.
-- **Image to PDF**: Convert multiple images (JPG, PNG, GIF, WebP, etc.) into a single PDF. Drag and drop to reorder, preview images, and download the result. All processing is local and private.
+**Add to Chrome - It's Free!**
 
-## Privacy
-- **100% Local**: All PDF and image processing is done in your browser. No files are uploaded or sent to any server.
-- **No Tracking**: The extension does not collect or transmit any data.
+---
 
-## Usage
-1. **Install the extension** in Chrome (load unpacked or from the Chrome Web Store).
-2. **Click the extension icon** to open the popup and choose a tool: Merge PDFs, Split PDF, Fill & Sign, or Image to PDF.
-3. **Use the modern web UI** to upload files, drag and drop, edit, and save your results.
+## Key Features
 
-## Modern UI
-- Clean, responsive design
-- Drag-and-drop everywhere
-- Tooltips and accessibility features
-- Consistent look and feel across popup and main app
+- 📄➕ **Effortless Merging**: Combine multiple PDF files into a single document with just a few clicks. Reorder pages as needed.
 
-## Coming Soon
-- Advanced Image to PDF features: image compression, page size selection, margin settings, PDF metadata, and more.
+- ✂️📄 **Precise Splitting**: Split a large PDF into individual pages or custom ranges, perfect for extracting specific sections.
 
-## License
-MIT
+- ✍️ **Fill & Sign PDFs**: Easily fill out forms and add your digital signature directly to your PDF documents.
 
-## Firefox Extension
+- ⚡ **Lightning Fast**: Process your PDF documents quickly and efficiently, saving you valuable time.
 
-A Firefox-compatible version is available in the releases as a zip file.
+- 🔒 **Secure & Private**: All processing happens locally in your browser, ensuring your documents remain private.
 
-### How to Install in Firefox
-1. Download the latest Firefox extension zip from the [Releases](https://github.com/ultron/pdfmergetool/releases) page.
-2. Extract the zip file to a folder on your computer.
-3. Open Firefox and go to `about:debugging` > "This Firefox".
-4. Click "Load Temporary Add-on..." and select any file in the extracted folder (e.g., `manifest.json`).
-5. The extension will appear in your toolbar for testing and use.
+- 🌐 **Browser Integrated**: No software installation required. Works seamlessly within your Chrome browser.
 
-> **Note:** Due to Firefox's current limitations, the extension uses a background script instead of a service worker. All features are supported, but if you encounter issues, please report them.
+- 💯 **Completely Free**: Enjoy all features without any hidden costs or subscriptions.
+
+---
+
+## How It Works
+
+1.  **Install the Extension**  
+    Click "Add to Chrome" and pin the extension to your browser toolbar.
+
+2.  **Select Your PDFs**  
+    Click the extension icon and select the PDF files you want to work with.
+
+3.  **Process & Download**  
+    Choose your desired action (merge, split, fill, or sign) and download your new PDF instantly.
+
+---
+
+### Ready to simplify your PDF tasks?
+**Get the Extension Now!**
+
+---
+
+[☕ Buy Me a Coffee]() <!-- Add your Buy Me a Coffee link here -->
+
+---
+© 2025 PDF Merge, Split, Sign and Fill Tool. All rights reserved.
+
+Built with ❤️ by [Ultron Developments](https://ultrondevelopments.com.au/contact-us).
