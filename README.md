@@ -45,6 +45,26 @@ Easily combine multiple PDF documents, precisely split large PDFs, or seamlessly
 
 ---
 
+## Manual Installation
+
+For users who prefer to install the extensions manually from the releases page:
+
+### Chrome Extension
+1. Download the latest `chrome-extension.zip` from the [Releases](https://github.com/ultrondevelopments/pdftool/releases) page.
+2. Unzip the file.
+3. In Chrome, navigate to `chrome://extensions`.
+4. Enable **Developer mode** using the toggle switch in the top-right corner.
+5. Click the **Load unpacked** button and select the directory where you unzipped the files.
+
+### Firefox Extension
+1. Download the latest `firefox-extension.zip` from the [Releases](https://github.com/ultrondevelopments/pdftool/releases) page.
+2. Unzip the file.
+3. In Firefox, navigate to `about:debugging#/runtime/this-firefox`.
+4. Click the **Load Temporary Add-on...** button.
+5. Select the `manifest.json` file inside the directory where you unzipped the files.
+
+---
+
 [☕ **Buy Me a Coffee**](https://buymeacoffee.com/puskark)
 
 ---
