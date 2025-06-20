@@ -998,3 +998,8 @@ body {
   vertical-align: middle;
   display: inline-block;
 }
+
+#imageToPdfUploadZone.upload-zone {
+  min-height: 160px;
+  padding: 48px 24px;
+}

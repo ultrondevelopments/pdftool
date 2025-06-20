@@ -1,71 +1,44 @@
-# PDF Merge, Split, Sign and Fill Tool - Privacy Focused
+# PDF Merge, Split, Sign and Fill Tool (Chrome Extension)
 
-[![Chrome Web Store](https://img.shields.io/chrome-web-store/v/jaeaclinfbdclcfapopmeimibdfallck?label=Chrome%20Web%20Store)](https://chromewebstore.google.com/detail/pdf-merge-and-split-tool/jaeaclinfbdclcfapopmeimibdfallck)
+A privacy-focused Chrome extension for working with PDF files and images, featuring a modern, intuitive UI. All processing happens locally in your browser—your files never leave your device.
 
-A modern, privacy-first Chrome extension for working with PDF files **entirely offline**. Merge, split, fill, sign, and rearrange PDFs directly in your browser—no uploads, no tracking, no compromises. Built and maintained by [Ultron Developments Pty. Ltd.](https://ultrondevelopments.com.au/).
+## Features
 
----
+- **Merge PDFs**: Combine multiple PDF files into one. Drag and drop to reorder before merging.
+- **Split PDF**: Split a PDF into individual pages or custom page ranges. Download as separate files or a ZIP archive.
+- **Fill & Sign**: Add text, dates, signatures, and colored strikethroughs to your PDFs. Includes undo/redo, drag-and-drop, and color picker for strikethroughs.
+- **Image to PDF**: Convert multiple images (JPG, PNG, GIF, WebP, etc.) into a single PDF. Drag and drop to reorder, preview images, and download the result. All processing is local and private.
 
-## ✨ Features
+## Privacy
+- **100% Local**: All PDF and image processing is done in your browser. No files are uploaded or sent to any server.
+- **No Tracking**: The extension does not collect or transmit any data.
 
-- **Merge PDFs**: Combine multiple PDF files into one, reorder before merging.
-- **Split PDFs**: Extract individual pages or custom page ranges into new PDFs (ZIP download).
-- **Fill & Sign**: Add text, dates, and signatures (draw or type) to any PDF page.
-- **Undo & Eraser**: Undo your last action or erase any added element with a click.
-- **Drag & Drop**: Reorder files and move elements visually.
-- **100% Offline**: All processing happens in your browser. Your files never leave your device.
-- **No Analytics, No Tracking**: No data is sent anywhere, ever.
+## Usage
+1. **Install the extension** in Chrome (load unpacked or from the Chrome Web Store).
+2. **Click the extension icon** to open the popup and choose a tool: Merge PDFs, Split PDF, Fill & Sign, or Image to PDF.
+3. **Use the modern web UI** to upload files, drag and drop, edit, and save your results.
 
----
+## Modern UI
+- Clean, responsive design
+- Drag-and-drop everywhere
+- Tooltips and accessibility features
+- Consistent look and feel across popup and main app
 
-## 🚀 Getting Started
+## Coming Soon
+- Advanced Image to PDF features: image compression, page size selection, margin settings, PDF metadata, and more.
 
-### 1. **Install**
+## License
+MIT
 
-**Option A: Download from Releases (Recommended)**
-- Go to the [Releases](https://github.com/ultrondevelopments/pdftool/releases) page
-- Download the latest release ZIP file
-- Extract the ZIP file to a folder on your computer
-- Go to `chrome://extensions` in your browser
-- Enable **Developer mode** (top right)
-- Click **Load unpacked** and select the extracted folder
+## Firefox Extension
 
-**Option B: Clone Repository**
-- Download or clone this repository
-- Go to `chrome://extensions` in your browser
-- Enable **Developer mode** (top right)
-- Click **Load unpacked** and select the project folder
+A Firefox-compatible version is available in the releases as a zip file.
 
-**Option C: Chrome Web Store**
-- Install directly from the [Chrome Web Store](https://chromewebstore.google.com/detail/pdf-merge-and-split-tool/jaeaclinfbdclcfapopmeimibdfallck)
+### How to Install in Firefox
+1. Download the latest Firefox extension zip from the [Releases](https://github.com/ultron/pdfmergetool/releases) page.
+2. Extract the zip file to a folder on your computer.
+3. Open Firefox and go to `about:debugging` > "This Firefox".
+4. Click "Load Temporary Add-on..." and select any file in the extracted folder (e.g., `manifest.json`).
+5. The extension will appear in your toolbar for testing and use.
 
-### 2. **Usage**
-- Click the extension icon in your browser.
-- Use the tabs to **Merge**, **Split**, or **Fill & Sign** your PDFs.
-- All features work offline—even signature fonts are bundled locally.
-
----
-
-## 🖼️ Screenshots
-
-![Main UI](screenshots/Screenshot.jpeg)
-*Main interface: Merge, Split, Fill & Sign PDFs locally in your browser.*
-
----
-
-## 🛡️ Privacy & Security
-- **No uploads**: All PDF processing is local.
-- **No tracking**: No analytics, no telemetry, no remote requests.
-- **Open source**: Review the code, contribute, or fork for your own use.
-
----
-
-## 🏢 About Ultron Developments Pty. Ltd.
-
-[Ultron Developments](https://ultrondevelopments.com.au/) is a Perth-based software company specializing in privacy-first, offline-first solutions for business and productivity. We build with ❤️ and ☕.
-
----
-
-## 📄 License
-
-This project is open source under the MIT License. See [LICENSE](LICENSE) for details.
+> **Note:** Due to Firefox's current limitations, the extension uses a background script instead of a service worker. All features are supported, but if you encounter issues, please report them.

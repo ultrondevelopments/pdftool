@@ -20,7 +20,7 @@ let maxUndoSteps = 20; // Maximum number of undo steps to keep in memory
 if (typeof pdfjsLib !== "undefined") {
     try {
         // Best practice for extensions: use chrome.runtime.getURL
-        pdfjsLib.GlobalWorkerOptions.workerSrc = chrome.runtime.getURL("pdf.worker.js");
+        pdfjsLib.GlobalWorkerOptions.workerSrc = browser.runtime.getURL("pdf.worker.js");
         console.log("PDF.js worker SRC set to (extension path):", pdfjsLib.GlobalWorkerOptions.workerSrc);
     } catch (e) {
         // Fallback if chrome.runtime is not available (e.g., not in extension context, or error)
